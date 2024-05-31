@@ -3,7 +3,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged as _onAuthStateChanged,
-} from "@firebase/auth";
+} from "firebase/auth";
 import { firebaseAuth } from "@/lib/firebase/config";
 
 export function onAuthStateChanged(callback: (authUser: User | null) => void) {
