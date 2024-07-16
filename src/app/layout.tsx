@@ -10,6 +10,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "Book Library",
   description: "A book library app",
@@ -21,13 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = cookies().get(SESSION_COOKIE_NAME)?.value || null;
-
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <div className={"px-[28rem]"}>
-          <Navbar session={session} /> {children}
-        </div>
+      <body className={`  ${poppins.className}`}>
+        <Navbar session={session} />
+        {children}
       </body>
     </html>
   );
